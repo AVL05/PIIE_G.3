@@ -307,7 +307,11 @@ PATCH  /api/admin/contacts/:id/status # Actualizar estado
 
 | Desarrollador | GitHub |
 |:-------------:|:------:|
-| **Grupo 3 PIIE** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/fardatxo) |
+| **Adri** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/fardatxo) |
+| **Gian** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/fardatxo) |
+| **Alberto** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/fardatxo) |
+| **Ismael** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/fardatxo) |
+| **** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/fardatxo) |
 
 </div>
 
