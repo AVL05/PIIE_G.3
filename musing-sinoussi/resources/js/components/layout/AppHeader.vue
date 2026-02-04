@@ -97,6 +97,7 @@ const navigation = [
     { name: 'Servicios', to: '/servicios' },
     { name: 'Blog', to: '/blog' },
     { name: 'Quiénes Somos', to: '/quienes-somos' },
-    { name: 'Contacto', to: '/contacto' }
+    { name: 'Contacto', to: '/contacto' },
+    { name: 'Admin', to: '/admin' }
 ];
 </script>
