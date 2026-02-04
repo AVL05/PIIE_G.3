@@ -204,6 +204,86 @@ class BlogPostSeeder extends Seeder
                 'is_published' => true,
                 'published_at' => now()->subDays(8),
             ],
+            [
+                'title' => 'Passivhaus: El estándar de construcción más exigente',
+                'slug' => 'passivhaus-estandar-construccion-mas-exigente',
+                'excerpt' => 'Conoce el estándar Passivhaus, sus principios fundamentales y por qué representa el futuro de la construcción sostenible.',
+                'content' => '<h2>¿Qué es Passivhaus?</h2>
+<p>Passivhaus es un estándar de construcción que permite conseguir un gran confort interior con un consumo energético muy bajo. Nació en Alemania en 1988 y se ha convertido en referencia mundial.</p>
+
+<h2>Los 5 principios básicos</h2>
+<ul>
+<li><strong>Aislamiento térmico:</strong> Envolvente de alta calidad sin puentes térmicos</li>
+<li><strong>Ventanas de altas prestaciones:</strong> Triple acristalamiento con marcos aislantes</li>
+<li><strong>Hermeticidad:</strong> Control total de las infiltraciones de aire</li>
+<li><strong>Ventilación mecánica:</strong> Con recuperador de calor de alta eficiencia</li>
+<li><strong>Ausencia de puentes térmicos:</strong> Diseño cuidadoso de todos los encuentros</li>
+</ul>
+
+<h2>Beneficios</h2>
+<p>Una vivienda Passivhaus consume hasta un 90% menos de energía que una convencional, manteniendo una temperatura estable todo el año.</p>',
+                'image' => '/images/blog/passivhaus.jpg',
+                'category' => 'Eficiencia Energética',
+                'tags' => ['passivhaus', 'construcción sostenible', 'eficiencia', 'certificación'],
+                'is_published' => true,
+                'published_at' => now()->subDays(12),
+            ],
+            [
+                'title' => 'Paneles solares fotovoltaicos: Guía de instalación para tu hogar',
+                'slug' => 'paneles-solares-fotovoltaicos-guia-instalacion-hogar',
+                'excerpt' => 'Todo lo que necesitas saber antes de instalar paneles solares en tu vivienda: tipos, costes, permisos y rentabilidad.',
+                'content' => '<h2>¿Por qué instalar paneles solares?</h2>
+<p>La energía solar fotovoltaica permite generar tu propia electricidad, reducir la factura de luz y contribuir a la transición energética.</p>
+
+<h2>Tipos de instalaciones</h2>
+<ul>
+<li><strong>Autoconsumo sin excedentes:</strong> Consumes toda la energía que produces</li>
+<li><strong>Autoconsumo con excedentes:</strong> Viertes a la red lo que no consumes</li>
+<li><strong>Autoconsumo con baterías:</strong> Almacenas el excedente para usarlo después</li>
+</ul>
+
+<h2>¿Cuántos paneles necesito?</h2>
+<p>Una vivienda media necesita entre 6 y 10 paneles (2-4 kWp) para cubrir el 50-70% de su consumo.</p>
+
+<h2>Rentabilidad</h2>
+<p>Con los precios actuales, una instalación se amortiza en 5-7 años y tiene una vida útil de más de 25 años.</p>',
+                'image' => '/images/blog/paneles-solares.jpg',
+                'category' => 'Energías Renovables',
+                'tags' => ['paneles solares', 'fotovoltaica', 'autoconsumo', 'energía renovable'],
+                'is_published' => true,
+                'published_at' => now()->subDays(7),
+            ],
+            [
+                'title' => 'Materiales de construcción ecológicos: Alternativas sostenibles',
+                'slug' => 'materiales-construccion-ecologicos-alternativas-sostenibles',
+                'excerpt' => 'Descubre los materiales de construcción más respetuosos con el medio ambiente y sus aplicaciones en la edificación moderna.',
+                'content' => '<h2>¿Qué son los materiales ecológicos?</h2>
+<p>Son aquellos que tienen un bajo impacto ambiental en su extracción, fabricación, transporte, uso y reciclaje. Priorizan recursos renovables y procesos eficientes.</p>
+
+<h2>Principales materiales</h2>
+<h3>Madera certificada</h3>
+<p>Procedente de bosques gestionados de forma sostenible (FSC o PEFC).</p>
+
+<h3>Corcho</h3>
+<p>Excelente aislante natural, renovable y reciclable.</p>
+
+<h3>Celulosa</h3>
+<p>Aislamiento fabricado a partir de papel reciclado.</p>
+
+<h3>Adobe y tierra comprimida</h3>
+<p>Materiales tradicionales con excelentes propiedades térmicas.</p>
+
+<h3>Bambú</h3>
+<p>Crece muy rápido y tiene gran resistencia estructural.</p>
+
+<h2>Beneficios</h2>
+<p>Los materiales ecológicos mejoran la calidad del aire interior, regulan la humedad y reducen la huella de carbono del edificio.</p>',
+                'image' => '/images/blog/materiales-ecologicos.jpg',
+                'category' => 'Construcción Sostenible',
+                'tags' => ['materiales ecológicos', 'construcción', 'sostenibilidad', 'madera'],
+                'is_published' => true,
+                'published_at' => now()->subDays(18),
+            ],
         ];
 
         foreach ($posts as $post) {

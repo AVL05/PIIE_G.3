@@ -29,7 +29,7 @@ class PropertySeeder extends Seeder
                 'energy_type' => 'aerotermia',
                 'sustainability_features' => ['thermal_insulation', 'double_glazing', 'sate', 'aerothermy', 'solar_panels', 'rainwater_recovery', 'certified_wood', 'eco_paints'],
                 'certifications' => ['Passivhaus', 'BREEAM'],
-                'images' => ['/images/properties/villa-1.jpg', '/images/properties/villa-2.jpg'],
+                'images' => ['/images/properties/villa-sostenible-1.jpg'],
                 'is_featured' => true,
             ],
             [
@@ -51,7 +51,7 @@ class PropertySeeder extends Seeder
                 'energy_type' => 'aerotermia',
                 'sustainability_features' => ['thermal_insulation', 'double_glazing', 'aerothermy', 'eco_paints'],
                 'certifications' => ['LEED'],
-                'images' => ['/images/properties/piso-ruzafa-1.jpg'],
+                'images' => ['/images/properties/casa-ecologica-2.jpg'],
                 'is_featured' => true,
             ],
             [
@@ -73,7 +73,7 @@ class PropertySeeder extends Seeder
                 'energy_type' => 'solar',
                 'sustainability_features' => ['thermal_insulation', 'double_glazing', 'sate', 'solar_panels'],
                 'certifications' => ['BREEAM'],
-                'images' => ['/images/properties/atico-benimaclet-1.jpg'],
+                'images' => ['/images/properties/piso-eficiente-3.jpg'],
                 'is_featured' => true,
             ],
             [
@@ -95,7 +95,7 @@ class PropertySeeder extends Seeder
                 'energy_type' => 'geotermia',
                 'sustainability_features' => ['thermal_insulation', 'double_glazing', 'sate', 'rainwater_recovery', 'certified_wood', 'eco_paints'],
                 'certifications' => ['Passivhaus'],
-                'images' => ['/images/properties/adosado-godella-1.jpg'],
+                'images' => ['/images/properties/chalet-bioclimatico-4.jpg'],
                 'is_featured' => true,
             ],
             [
@@ -117,7 +117,7 @@ class PropertySeeder extends Seeder
                 'energy_type' => 'electrica',
                 'sustainability_features' => ['double_glazing', 'eco_paints'],
                 'certifications' => [],
-                'images' => ['/images/properties/estudio-carmen-1.jpg'],
+                'images' => ['/images/properties/apartamento-verde-5.jpg'],
                 'is_featured' => false,
             ],
             [
@@ -139,7 +139,7 @@ class PropertySeeder extends Seeder
                 'energy_type' => 'aerotermia',
                 'sustainability_features' => ['thermal_insulation', 'double_glazing', 'aerothermy'],
                 'certifications' => ['VERDE'],
-                'images' => ['/images/properties/duplex-paterna-1.jpg'],
+                'images' => ['/images/properties/casa-pasiva-6.jpg'],
                 'is_featured' => true,
             ],
         ];
