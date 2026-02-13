@@ -1,31 +1,27 @@
 <template>
     <div class="min-h-screen bg-gray-50 flex">
+        <!-- Mobile Sidebar Overlay -->
+        <div
+            v-if="sidebarOpen"
+            class="fixed inset-0 bg-gray-900/50 z-20 lg:hidden backdrop-blur-sm transition-opacity"
+            @click="sidebarOpen = false"
+        ></div>
+
         <!-- Sidebar -->
         <aside
-            class="w-64 bg-slate-900 text-white flex flex-col shadow-2xl z-20 transition-all duration-300"
+            class="fixed inset-y-0 left-0 w-64 bg-slate-900 text-white flex flex-col shadow-2xl z-30 transition-transform duration-300 lg:static lg:translate-x-0"
+            :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
         >
             <!-- Brand -->
             <div
                 class="h-20 flex items-center px-6 bg-slate-950 border-b border-slate-800"
             >
                 <router-link to="/admin" class="flex items-center gap-3">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20"
-                    >
-                        <svg
-                            class="w-6 h-6 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                            />
-                        </svg>
-                    </div>
+                    <img
+                        src="/favicon.png"
+                        alt="SerraInnova Logo"
+                        class="h-10 w-auto"
+                    />
                     <div>
                         <span class="block text-lg font-bold tracking-tight"
                             >SerraInnova</span
@@ -36,6 +32,25 @@
                         >
                     </div>
                 </router-link>
+                <!-- Close Button (Mobile) -->
+                <button
+                    @click="sidebarOpen = false"
+                    class="ml-auto lg:hidden text-slate-400 hover:text-white"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
             </div>
 
             <!-- Navigation -->
@@ -48,6 +63,7 @@
 
                 <router-link
                     to="/admin"
+                    @click="sidebarOpen = false"
                     class="flex items-center px-3 py-2.5 rounded-xl transition-all duration-200 group"
                     :class="
                         isActive('/admin') && !isActive('/admin/')
@@ -84,6 +100,7 @@
 
                 <router-link
                     to="/admin/propiedades"
+                    @click="sidebarOpen = false"
                     class="flex items-center px-3 py-2.5 rounded-xl transition-all duration-200 group"
                     :class="
                         isActive('/admin/propiedades')
@@ -114,6 +131,7 @@
 
                 <router-link
                     to="/admin/blog"
+                    @click="sidebarOpen = false"
                     class="flex items-center px-3 py-2.5 rounded-xl transition-all duration-200 group"
                     :class="
                         isActive('/admin/blog')
@@ -141,8 +159,16 @@
                     </svg>
                     Blog
                 </router-link>
+
+                <p
+                    class="px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider mt-8 mb-2"
+                >
+                    Sistema
+                </p>
+
                 <router-link
                     to="/admin/usuarios/crear"
+                    @click="sidebarOpen = false"
                     class="flex items-center px-3 py-2.5 rounded-xl transition-all duration-200 group"
                     :class="
                         isActive('/admin/usuarios')
@@ -172,7 +198,7 @@
                 </router-link>
             </nav>
 
-            <!-- User Profile -->
+            <!-- User Profile & Actions -->
             <div class="p-4 border-t border-slate-800 bg-slate-900">
                 <div class="flex items-center gap-3 mb-4">
                     <div
@@ -188,25 +214,47 @@
                     </div>
                 </div>
 
-                <router-link
-                    to="/"
-                    class="flex items-center justify-center px-4 py-2 border border-slate-700 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors text-sm w-full"
-                >
-                    <svg
-                        class="w-4 h-4 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                <div class="space-y-2">
+                    <router-link
+                        to="/"
+                        class="flex items-center justify-center px-4 py-2 w-full border border-slate-700 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors text-sm"
                     >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                        />
-                    </svg>
-                    Volver al sitio web
-                </router-link>
+                        <svg
+                            class="w-4 h-4 mr-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                        </svg>
+                        Ver sitio web
+                    </router-link>
+
+                    <button
+                        @click="handleLogout"
+                        class="flex items-center justify-center px-4 py-2 w-full border border-red-500/30 text-red-400 rounded-lg hover:bg-red-500/10 hover:text-red-300 transition-colors text-sm"
+                    >
+                        <svg
+                            class="w-4 h-4 mr-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                            />
+                        </svg>
+                        Cerrar Sesión
+                    </button>
+                </div>
             </div>
         </aside>
 
@@ -214,9 +262,36 @@
         <main class="flex-1 flex flex-col h-screen overflow-hidden">
             <!-- Header -->
             <header
-                class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8 shadow-sm z-10"
+                class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 lg:px-8 shadow-sm z-10"
             >
-                <h1 class="text-xl font-bold text-gray-800">{{ pageTitle }}</h1>
+                <div class="flex items-center gap-4">
+                    <!-- Mobile sidebar toggle -->
+                    <button
+                        @click="sidebarOpen = true"
+                        class="lg:hidden text-gray-500 hover:text-gray-700"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"
+                            />
+                        </svg>
+                    </button>
+
+                    <h1
+                        class="text-lg lg:text-xl font-bold text-gray-800 truncate"
+                    >
+                        {{ pageTitle }}
+                    </h1>
+                </div>
+
                 <div class="flex items-center gap-4">
                     <button
                         class="p-2 text-gray-400 hover:text-gray-600 transition-colors relative"
@@ -234,19 +309,19 @@
                                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
                             />
                         </svg>
-                        <span
-                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"
-                        ></span>
                     </button>
-                    <div class="h-8 w-px bg-gray-200 mx-2"></div>
-                    <span class="text-sm font-medium text-gray-600">{{
-                        currentDate
-                    }}</span>
+                    <div
+                        class="h-8 w-px bg-gray-200 mx-2 hidden sm:block"
+                    ></div>
+                    <span
+                        class="text-sm font-medium text-gray-600 hidden sm:block"
+                        >{{ currentDate }}</span
+                    >
                 </div>
             </header>
 
             <!-- Scrollable Content -->
-            <div class="flex-1 overflow-auto p-8 bg-gray-50">
+            <div class="flex-1 overflow-auto p-4 lg:p-8 bg-gray-50">
                 <router-view v-slot="{ Component }">
                     <transition
                         enter-active-class="transition ease-out duration-200"
@@ -266,16 +341,24 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-import { useRoute } from "vue-router";
+import { computed, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
+const router = useRouter();
+const sidebarOpen = ref(false);
 
 const isActive = (path) => {
     if (path === "/admin") {
         return route.path === "/admin";
     }
     return route.path.startsWith(path);
+};
+
+const handleLogout = () => {
+    sessionStorage.removeItem("isAdminAuthenticated");
+    sessionStorage.removeItem("adminUser");
+    router.push("/login");
 };
 
 const pageTitle = computed(() => {

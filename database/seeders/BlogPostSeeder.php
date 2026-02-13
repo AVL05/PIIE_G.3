@@ -284,6 +284,60 @@ class BlogPostSeeder extends Seeder
                 'is_published' => true,
                 'published_at' => now()->subDays(18),
             ],
+            [
+                'title' => 'Ayudas Next Generation para Rehabilitación 2026',
+                'slug' => 'ayudas-next-generation-rehabilitacion-2026',
+                'excerpt' => 'Guía completa sobre las nuevas subvenciones europeas para mejorar la eficiencia energética de tu vivienda.',
+                'content' => '<h2>Las ayudas continúan en 2026</h2>
+<p>Las ayudas Next Generation continúan en 2026 con un enfoque renovado en la rehabilitación residencial. Los propietarios pueden obtener hasta un 80% de subvención a fondo perdido si consiguen reducir el consumo de energía primaria no renovable en al menos un 60%.</p>
+
+<h2>Actuaciones subvencionables</h2>
+<ul>
+<li>Cambio de ventanas por otras de altas prestaciones.</li>
+<li>Aislamiento de fachadas (SATE) y cubiertas.</li>
+<li>Instalación de aerotermia y placas solares.</li>
+</ul>
+
+<p>Es fundamental contar con un Libro del Edificio Existent para poder acceder a estas ayudas y realizar un estudio energético previo.</p>',
+                'image' => 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80',
+                'category' => 'Subvenciones',
+                'tags' => ['subvenciones', 'rehabilitación', 'ahorro'],
+                'is_published' => true,
+                'published_at' => now()->subHours(5),
+            ],
+            [
+                'title' => 'Aerotermia vs Gas Natural: ¿Qué compensa más?',
+                'slug' => 'aerotermia-vs-gas-natural-comparativa',
+                'excerpt' => 'Analizamos costes, eficiencia y amortización de ambos sistemas para que elijas la mejor opción.',
+                'content' => '<h2>La alternativa rentable</h2>
+<p>Con la volatilidad de los precios del gas, la aerotermia se posiciona como la alternativa más rentable a medio plazo. Aunque la inversión inicial es mayor (entre 8.000€ y 12.000€ para una vivienda media), los rendimientos (COP) superiores a 4 permiten ahorros del 70% en la factura.</p>
+
+<h2>Ventaja adicional: Refrigeración</h2>
+<p>Además, la aerotermia permite refrigeración en verano si se usa con suelo radiante refrescante o fancoils, algo que la caldera de gas no puede ofrecer. Esto la convierte en una solución integral para todo el año.</p>',
+                'image' => 'https://images.unsplash.com/photo-1581094794329-cd8119638b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                'category' => 'Tecnología',
+                'tags' => ['aerotermia', 'gas', 'climatización', 'comparativa'],
+                'is_published' => true,
+                'published_at' => now()->subDays(3),
+            ],
+            [
+                'title' => '5 Materiales Ecológicos para Reformar tu Casa',
+                'slug' => '5-materiales-ecologicos-reforma',
+                'excerpt' => 'Descubre materiales sostenibles, saludables y duraderos para una reforma consciente.',
+                'content' => '<h2>Lista de materiales recomendados</h2>
+<ol>
+<li><strong>Corcho:</strong> Excelente aislante térmico y acústico, 100% natural y renovable.</li>
+<li><strong>Pinturas minerales:</strong> Sin COVs (compuestos orgánicos volátiles), permiten que las paredes transpiren.</li>
+<li><strong>Madera certificada FSC:</strong> Garantiza que proviene de bosques gestionados de forma sostenible.</li>
+<li><strong>Barro cocido:</strong> Material tradicional, inerte y con gran inercia térmica.</li>
+<li><strong>Aislamientos de celulosa o lana de oveja:</strong> Alternativas naturales a las lanas minerales sintéticas.</li>
+</ol>',
+                'image' => 'https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                'category' => 'Consejos',
+                'tags' => ['materiales', 'reforma', 'ecología'],
+                'is_published' => true,
+                'published_at' => now()->subDays(7),
+            ]
         ];
 
         foreach ($posts as $post) {

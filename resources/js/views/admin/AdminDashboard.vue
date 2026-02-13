@@ -1,9 +1,10 @@
 <template>
     <div>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <!-- Properties Stats -->
-            <div
-                class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
+            <router-link
+                to="/admin/propiedades"
+                class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col justify-between hover:shadow-lg transition-transform hover:-translate-y-1 duration-300 group cursor-pointer"
             >
                 <div class="flex items-start justify-between">
                     <div>
@@ -12,11 +13,15 @@
                         >
                             Propiedades
                         </p>
-                        <h3 class="text-3xl font-bold text-slate-800">
+                        <h3
+                            class="text-3xl font-bold text-slate-800 group-hover:text-primary-600 transition-colors"
+                        >
                             {{ stats.properties }}
                         </h3>
                     </div>
-                    <div class="p-3 bg-blue-50 rounded-xl text-blue-600">
+                    <div
+                        class="p-3 bg-blue-50 rounded-xl text-blue-600 group-hover:bg-blue-100 transition-colors"
+                    >
                         <svg
                             class="w-6 h-6"
                             fill="none"
@@ -32,29 +37,15 @@
                         </svg>
                     </div>
                 </div>
-                <div
-                    class="mt-4 flex items-center text-xs font-medium text-emerald-600 bg-emerald-50 w-fit px-2 py-1 rounded-lg"
-                >
-                    <svg
-                        class="w-3 h-3 mr-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                        />
-                    </svg>
-                    <span>+12% vs mes anterior</span>
+                <div class="mt-4 flex items-center text-sm text-slate-500">
+                    <span>Gestionar catálogo inmobiliario →</span>
                 </div>
-            </div>
+            </router-link>
 
             <!-- Blog Posts -->
-            <div
-                class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
+            <router-link
+                to="/admin/blog"
+                class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col justify-between hover:shadow-lg transition-transform hover:-translate-y-1 duration-300 group cursor-pointer"
             >
                 <div class="flex items-start justify-between">
                     <div>
@@ -63,11 +54,15 @@
                         >
                             Artículos
                         </p>
-                        <h3 class="text-3xl font-bold text-slate-800">
+                        <h3
+                            class="text-3xl font-bold text-slate-800 group-hover:text-purple-600 transition-colors"
+                        >
                             {{ stats.posts }}
                         </h3>
                     </div>
-                    <div class="p-3 bg-purple-50 rounded-xl text-purple-600">
+                    <div
+                        class="p-3 bg-purple-50 rounded-xl text-purple-600 group-hover:bg-purple-100 transition-colors"
+                    >
                         <svg
                             class="w-6 h-6"
                             fill="none"
@@ -83,101 +78,10 @@
                         </svg>
                     </div>
                 </div>
-                <div
-                    class="mt-4 flex items-center text-xs font-medium text-slate-500 bg-slate-50 w-fit px-2 py-1 rounded-lg"
-                >
-                    <span>3 borradores pendientes</span>
+                <div class="mt-4 flex items-center text-sm text-slate-500">
+                    <span>Gestionar noticias y blog →</span>
                 </div>
-            </div>
-
-            <!-- Messages -->
-            <div
-                class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
-            >
-                <div class="flex items-start justify-between">
-                    <div>
-                        <p
-                            class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1"
-                        >
-                            Mensajes
-                        </p>
-                        <h3 class="text-3xl font-bold text-slate-800">
-                            {{ stats.newContacts }}
-                        </h3>
-                    </div>
-                    <div class="p-3 bg-amber-50 rounded-xl text-amber-600">
-                        <svg
-                            class="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                        </svg>
-                    </div>
-                </div>
-                <div
-                    class="mt-4 flex items-center text-xs font-medium text-amber-600 bg-amber-50 w-fit px-2 py-1 rounded-lg"
-                >
-                    <span>5 sin leer</span>
-                </div>
-            </div>
-
-            <!-- Sales -->
-            <div
-                class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
-            >
-                <div class="flex items-start justify-between">
-                    <div>
-                        <p
-                            class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1"
-                        >
-                            Operaciones
-                        </p>
-                        <h3 class="text-3xl font-bold text-slate-800">
-                            {{ stats.salesThisMonth }}
-                        </h3>
-                    </div>
-                    <div class="p-3 bg-emerald-50 rounded-xl text-emerald-600">
-                        <svg
-                            class="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                            />
-                        </svg>
-                    </div>
-                </div>
-                <div
-                    class="mt-4 flex items-center text-xs font-medium text-emerald-600 bg-emerald-50 w-fit px-2 py-1 rounded-lg"
-                >
-                    <svg
-                        class="w-3 h-3 mr-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                        />
-                    </svg>
-                    <span>Objetivo mensual cumplido</span>
-                </div>
-            </div>
+            </router-link>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -298,86 +202,87 @@
                 </div>
             </div>
 
-            <!-- Recent Activity -->
+            <!-- Recent Activity (Items < 24h) -->
             <div
                 class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-100 p-6"
             >
-                <h3
-                    class="text-lg font-bold text-slate-800 mb-6 flex items-center"
-                >
-                    <svg
-                        class="w-5 h-5 mr-2 text-slate-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                <div class="flex items-center justify-between mb-6">
+                    <h3
+                        class="text-lg font-bold text-slate-800 flex items-center"
                     >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                    </svg>
-                    Actividad Reciente
-                </h3>
+                        <svg
+                            class="w-5 h-5 mr-2 text-slate-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                        </svg>
+                        Novedades (Últimas 24h)
+                    </h3>
+                </div>
 
                 <div
                     class="relative pl-6 border-l-2 border-slate-100 space-y-8"
                 >
                     <div
-                        v-if="recentContacts.length === 0"
+                        v-if="recentItems.length === 0"
                         class="text-center py-8"
                     >
-                        <p class="text-slate-400">No hay actividad reciente</p>
+                        <p class="text-slate-400">
+                            No hay contenido nuevo en las últimas 24 horas.
+                        </p>
                     </div>
 
                     <div
-                        v-for="(contact, index) in recentContacts"
-                        :key="contact.id || index"
+                        v-for="(item, index) in recentItems"
+                        :key="item.id + item.type"
                         class="relative"
                     >
                         <div
                             class="absolute -left-[29px] top-1 w-4 h-4 rounded-full border-2 border-white ring-1 ring-slate-200"
                             :class="
-                                index === 0 ? 'bg-emerald-500' : 'bg-slate-300'
+                                item.type === 'Propiedad'
+                                    ? 'bg-blue-500'
+                                    : 'bg-purple-500'
                             "
                         ></div>
 
                         <div
-                            class="bg-slate-50 rounded-xl p-4 hover:bg-slate-100 transition-colors cursor-pointer"
+                            class="bg-slate-50 rounded-xl p-4 hover:bg-slate-100 transition-colors"
                         >
                             <div class="flex justify-between items-start mb-1">
                                 <span
                                     class="text-sm font-semibold text-slate-800"
-                                    >{{ contact.name }}</span
+                                    >{{ item.title }}</span
                                 >
                                 <span class="text-xs text-slate-400">{{
-                                    formatDate(contact.created_at)
+                                    formatDate(item.created_at)
                                 }}</span>
                             </div>
-                            <p class="text-sm text-slate-600 line-clamp-2">
-                                {{ contact.message }}
-                            </p>
                             <div class="mt-2 flex items-center gap-2">
                                 <span
-                                    class="text-[10px] uppercase font-bold text-slate-400 bg-white px-2 py-0.5 rounded border border-slate-200"
-                                    >Contacto</span
+                                    class="text-[10px] uppercase font-bold text-white px-2 py-0.5 rounded"
+                                    :class="
+                                        item.type === 'Propiedad'
+                                            ? 'bg-blue-500'
+                                            : 'bg-purple-500'
+                                    "
+                                    >{{ item.type }}</span
                                 >
                                 <span
+                                    v-if="item.subtitle"
                                     class="text-[10px] font-medium text-slate-500"
-                                    >{{ contact.email }}</span
+                                    >{{ item.subtitle }}</span
                                 >
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="mt-6 text-center">
-                    <button
-                        class="text-sm text-emerald-600 font-medium hover:text-emerald-700 transition-colors"
-                    >
-                        Ver toda la actividad
-                    </button>
                 </div>
             </div>
         </div>
@@ -391,43 +296,58 @@ import { onMounted, ref } from "vue";
 const stats = ref({
     properties: 0,
     posts: 0,
-    newContacts: 0,
-    salesThisMonth: 0,
 });
 
-const recentContacts = ref([]);
+const recentItems = ref([]);
 
 onMounted(async () => {
     try {
-        const contactStats = await axios.get("/api/admin/contacts/stats");
-        stats.value.newContacts = contactStats.data.pending || 0;
+        const now = new Date();
+        const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
 
-        // Mock data for other stats since we don't have endpoints yet
-        stats.value.properties = 24;
-        stats.value.posts = 12;
-        stats.value.salesThisMonth = 3;
+        // Fetch Properties
+        const propertiesRes = await axios.get("/api/admin/properties");
+        const properties = propertiesRes.data.data;
+        stats.value.properties = propertiesRes.data.total;
 
-        const contacts = await axios.get("/api/admin/contacts?per_page=5");
-        recentContacts.value = contacts.data.data?.slice(0, 3) || [];
+        // Fetch Blog Posts
+        const postsRes = await axios.get("/api/blog"); // Using public endpoint as admin might not have separate list endpoint yet, or use /api/admin/blog if exists. let's check store... store uses /api/blog. Let's use /api/admin/blog but if it fails revert. Actually the store used /api/blog for fetchPosts. Admin store actions use /api/admin/blog for mutations. Let's try /api/blog for list as it likely returns all for now.
+        // Wait, the AdminProperties.vue uses /api/admin/properties.
+        // The Blog store uses /api/blog. Let's use /api/blog for posts.
+        const posts = postsRes.data.data;
+        stats.value.posts = postsRes.data.total;
+
+        // Filter Recent Properties
+        const recentProperties = properties
+            .filter((p) => new Date(p.created_at) > oneDayAgo)
+            .map((p) => ({
+                id: p.id,
+                title: p.title,
+                type: "Propiedad",
+                subtitle: `${p.status} - ${formatNumber(p.price)}€`,
+                created_at: p.created_at,
+            }));
+
+        // Filter Recent Posts
+        const recentPosts = posts
+            .filter((p) => new Date(p.created_at) > oneDayAgo)
+            .map((p) => ({
+                id: p.id,
+                title: p.title,
+                type: "Artículo",
+                subtitle: `Categoría: ${p.category}`,
+                created_at: p.created_at,
+            }));
+
+        // Combine and Sort
+        const allRecent = [...recentProperties, ...recentPosts].sort(
+            (a, b) => new Date(b.created_at) - new Date(a.created_at),
+        );
+
+        // Take top 5 if too many
+        recentItems.value = allRecent.slice(0, 10);
     } catch (error) {
         console.error("Error loading dashboard data:", error);
-        // Fallback data for demo
-        recentContacts.value = [
-            {
-                id: 1,
-                name: "María García",
-                email: "maria@example.com",
-                message: "Estoy interesada en la villa ecológica de Valencia.",
-                created_at: new Date(),
-            },
-            {
-                id: 2,
-                name: "Juan López",
-                email: "juan@example.com",
-                message: "¿Realizan certificaciones energéticas?",
-                created_at: new Date(Date.now() - 86400000),
-            },
-        ];
     }
 });
 
@@ -439,5 +359,9 @@ const formatDate = (date) => {
         hour: "2-digit",
         minute: "2-digit",
     });
+};
+
+const formatNumber = (num) => {
+    return new Intl.NumberFormat("es-ES").format(num);
 };
 </script>

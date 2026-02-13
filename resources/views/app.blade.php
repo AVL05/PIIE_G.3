@@ -9,7 +9,7 @@
     <meta name="description" content="Encuentra tu hogar sostenible ideal. Propiedades con certificación energética, eficiencia y compromiso con el medio ambiente.">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
